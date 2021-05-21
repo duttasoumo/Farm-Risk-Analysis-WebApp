@@ -1,0 +1,237 @@
+<html>
+	<head>
+		<title>Resources</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<script src="javascript/jquery.min.js"></script>
+		<script src="javascript/bootstrap.min.js"></script>
+		<script src="javascript/jquery.min.js"></script>
+		<script>
+			$(document).ready(function(){
+			  $("#navigation").load("navigation.html");
+			});
+		</script>
+		<link rel="stylesheet" href="css/regpagestyle.css" />
+	</head>
+
+	<body>
+		<div id="navigation"></div>
+
+		<h1 align="center">Resource Data</h1>
+	<form action="php/resourceSubmit.php" method="post">
+    <div class="container">
+			<div class="row">
+				<div class="col-sm-6 col-sm-offset-3">
+					<label for="ID" class="control-label">CID:</label>
+					<input class="form-control" style="text-align: center; font-size: 25px;" type="text" id="ID" name="cid" />
+				</div>
+			</div>
+		</div>
+
+
+			<div class="container form-padding-custom">
+
+				<div class="panel panel-success">
+          <div class="panel-heading">Seeds</div>
+          <div class="panel-body">
+            <div class="row form-padding-custom">
+
+              <div class="col-sm-3 col-sm-offset-1">
+                <label for="seed" class="control-label">Investment:</label>
+                <input id="seed" name="seed" type="text" class="form-control" value="0" placeholder="in rupees">
+              </div>
+							<div class="col-sm-3 col-sm-offset-1">
+                <label for="seed" class="control-label">Optimal Price:</label>
+                <input id="seedOpt"  type="text" class="form-control" value="0" placeholder="in rupees">
+              </div>
+              <div class="col-sm-3 col-sm-offset-1">
+                <label for="seedRisk" class="control-label">Risk:</label>
+                <input id="seedRisk" name="seedRisk" type="text" class="form-control" value="0" placeholder="auto-generated value">
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="panel panel-success">
+          <div class="panel-heading">Fertilizers</div>
+          <div class="panel-body">
+            <div class="row form-padding-custom"> <!-- Row-4 *********-->
+
+              <div class="col-sm-3 col-sm-offset-1">
+                <label for="fert" class="control-label">Investment:</label>
+                <input id="fert" name="fert" type="text" class="form-control" value="0" placeholder="in rupees">
+              </div>
+							<div class="col-sm-3 col-sm-offset-1">
+                <label for="fert" class="control-label">Optimal Price:</label>
+                <input id="fertOpt"  type="text" class="form-control" value="0" placeholder="in rupees">
+              </div>
+              <div class="col-sm-3 col-sm-offset-1">
+                <label for="fertRisk" class="control-label">Risk:</label>
+                <input id="fertRisk" name="fertRisk" type="text" class="form-control"  value="0" placeholder="auto-generated value">
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="panel panel-success">
+          <div class="panel-heading">Pesticides</div>
+          <div class="panel-body">
+            <div class="row form-padding-custom"> <!-- Row-4 *********-->
+
+              <div class="col-sm-3 col-sm-offset-1">
+                <label for="pest" class="control-label">Investment:</label>
+                <input id="pest" name="pest" type="text" class="form-control" value="0" placeholder="in rupees">
+              </div>
+							<div class="col-sm-3 col-sm-offset-1">
+                <label for="pest" class="control-label">Optimal Price:</label>
+                <input id="pestOpt"  type="text" class="form-control" value="0" placeholder="in rupees">
+              </div>
+              <div class="col-sm-3 col-sm-offset-1">
+                <label for="pestRisk" class="control-label">Risk:</label>
+                <input id="pestRisk" name="pestRisk" type="text" class="form-control"  value="0" placeholder="auto-generated value">
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="panel panel-success">
+          <div class="panel-heading">Weedicides</div>
+          <div class="panel-body">
+            <div class="row form-padding-custom"> <!-- Row-4 *********-->
+
+              <div class="col-sm-3 col-sm-offset-1">
+                <label for="weed" class="control-label">Investment:</label>
+                <input id="weed" name="weed" type="text" class="form-control" value="0" placeholder="in rupees">
+              </div>
+							<div class="col-sm-3 col-sm-offset-1">
+                <label for="weed" class="control-label">Optimal Price:</label>
+                <input id="weedOpt"  type="text" class="form-control" value="0" placeholder="in rupees">
+              </div>
+              <div class="col-sm-3 col-sm-offset-1">
+                <label for="weedRisk" class="control-label">Risk:</label>
+                <input id="weedRisk" name="weedRisk" type="text" class="form-control"  value="0" placeholder="auto-generated value">
+              </div>
+
+            </div>
+          </div>
+        </div>
+				<div class="panel panel-success">
+					<div class="panel-heading">Manure</div>
+					<div class="panel-body">
+						<div class="row form-padding-custom"> <!-- Row-4 *********-->
+
+							<div class="col-sm-3 col-sm-offset-1">
+								<label for="manure" class="control-label">Investment:</label>
+								<input id="manure" name="manure" type="text" class="form-control" value="0" placeholder="in rupees">
+							</div>
+							<div class="col-sm-3 col-sm-offset-1">
+                <label for="manure" class="control-label">Optimal Price:</label>
+                <input id="manureOpt"  type="text" class="form-control" value="0" placeholder="in rupees">
+              </div>
+							<div class="col-sm-3 col-sm-offset-1">
+								<label for="manureRisk" class="control-label">Risk:</label>
+								<input id="manureRisk" name="manureRisk" type="text" class="form-control"  value="0" placeholder="auto-generated value">
+							</div>
+
+						</div>
+					</div>
+				</div>
+        <div class="panel panel-danger"> <!--Total Panel ****************************-->
+          <div class="panel-heading">Aggregate Risk Factor</div>
+          <div class="panel-body">
+            <div class="row form-padding-custom">
+
+              <div class="col-sm-4 col-sm-offset-4">
+                <label for="totalRisk" class="control-label">Total Resource Risk:</label>
+                <input id="totalRisk" name="risk" type="text" class="form-control" value="0" placeholder="auto-generated value" />
+              </div>
+
+            </div>
+          </div>
+        </div> <!--End of Total Panel-->
+
+
+				<div class="row">
+					<div class="col-sm-2 col-sm-offset-5">
+						<input type="submit" class="form-control" value="Confirm" style="color: white; font-weight: bold; background-color:black;"/>
+					</div>
+				</div>
+
+			</div><!--closing container-->
+		</form>
+		<script>
+			$(document).ready(function(){
+
+
+				var cid=GetURLParameter('cid');
+				$('#ID').val(cid);
+
+
+				function GetURLParameter(sParam){
+					var sPageURL = window.location.search.substring(1);
+	    		var sURLVariables = sPageURL.split('&');
+	    		for (var i = 0; i < sURLVariables.length; i++)
+	    		{
+	        	var sParameterName = sURLVariables[i].split('=');
+	        	if (sParameterName[0] == sParam)
+	        	{
+	            return sParameterName[1];
+	        	}
+	    		}
+				}
+
+			$('#seed').blur(function(){
+				var risk=riskCalc($(this).val(),"Seed", $('#seedRisk'), $('#seedOpt'));
+			});
+
+			$('#fert').blur(function(){
+				var risk=riskCalc($(this).val(),"Fertilizer", $('#fertRisk'), $('#fertOpt'));
+			});
+
+			$('#pest').blur(function(){
+				var risk=riskCalc($(this).val(),"Pesticide", $('#pestRisk'), $('#pestOpt'));
+			});
+
+			$('#weed').blur(function(){
+				var risk=riskCalc($(this).val(),"Weedicide", $('#weedRisk'), $('#weedOpt'));
+			});
+			$('#manure').blur(function(){
+							var risk=riskCalc($(this).val(),"Manure", $('#manureRisk'), $('#manureOpt'));
+						});
+			$('#totalRisk').focus(function(){
+							var s=parseFloat($('#seedRisk').val());
+							var f=parseFloat($('#fertRisk').val());
+							var p=parseFloat($('#pestRisk').val());
+							var w=parseFloat($('#weedRisk').val());
+							var m=parseFloat($('#manureRisk').val());
+							var c=5;
+							if($('#seed').val()==="0") c--;
+							if($('#manure').val()==="0") c--;
+							if($('#pest').val()==="0") c--;
+							if($('#fert').val()==="0") c--;
+							if($('#weed').val()==="0") c--;
+							var tr=(s+f+p+w+m)/c;
+							$('#totalRisk').val(tr) ;
+						});
+			function riskCalc(inv, name, id ,opt){
+
+				$.ajax({
+					type: 'POST',
+					url: 'php/resourceRisk.php',
+					data: { cid: cid, investment: inv, resource: name },
+					success: function( resJson ){
+								 var json=JSON.parse(resJson);
+								 $(id).val(json['index']);
+								 $(opt).val(json['optimalPrice']);
+					}
+				});
+			}
+		});
+
+			</script>
+</body>
+</html>

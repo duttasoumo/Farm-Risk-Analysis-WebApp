@@ -1,0 +1,213 @@
+<html>
+	<head>
+		<title>Yields</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<script src="javascript/jquery.min.js"></script>
+		<script src="javascript/bootstrap.min.js"></script>
+		<script>
+			$(document).ready(function(){
+			  $("#navigation").load("navigation.html");
+			});
+		</script>
+		<link rel="stylesheet" href="css/regpagestyle.css" />
+	</head>
+
+	<body>
+		<div id="navigation"></div>
+
+		<h1 align="center">Yield Data</h1>
+<form action="php/yieldSubmit.php" method="post">
+    <div class="container">
+			<div class="row">
+				<div class="col-sm-6 col-sm-offset-3">
+					<label for="ID" class="control-label">CID:</label>
+					<input class="form-control" style="text-align: center; font-size: 25px;" type="text" id="ID" name="cid" />
+				</div>
+			</div>
+		</div>
+
+
+			<div class="container form-padding-custom">
+
+				<div class="panel panel-success"> <!--Rabi Panel ****************************-->
+					<div class="panel-heading">Historic Data</div>
+					<div class="panel-body">
+						<div class="row form-padding-custom"> <!-- Row-1 *********-->
+
+							<div class="col-sm-3 col-sm-offset-2">
+                <label for="y1" class="control-label">Yield 1:</label>
+                <input id="y1"  name="y1" type="text" class="form-control" placeholder="Yield for year 1">
+							</div>
+
+              <div class="col-sm-3 col-sm-offset-2">
+                <label for="r1" class="control-label">Returns 1:</label>
+                <input id="r1" name="r1" type="text" class="form-control" placeholder="Yield for year 1">
+							</div>
+
+						</div>
+
+						<div class="row form-padding-custom"> <!-- Row-2 *********-->
+
+							<div class="col-sm-3 col-sm-offset-2">
+                <label for="y2" class="control-label">Yield 2:</label>
+                <input id="y2"  name="y2" type="text" class="form-control" placeholder="Yield for year 2">
+							</div>
+
+              <div class="col-sm-3 col-sm-offset-2">
+                <label for="r2" class="control-label">Returns 2:</label>
+                <input id="r2" name="r2" type="text" class="form-control" placeholder="Yield for year 2">
+							</div>
+
+						</div>
+
+						<div class="row form-padding-custom"> <!-- Row-3 *********-->
+
+							<div class="col-sm-3 col-sm-offset-2">
+                <label for="y3" class="control-label">Yield 3:</label>
+                <input id="y3"  name="y3" type="text" class="form-control" placeholder="Yield for year 3">
+							</div>
+
+              <div class="col-sm-3 col-sm-offset-2">
+                <label for="r3" class="control-label">Returns 3:</label>
+                <input id="r3" name="r3" type="text" class="form-control" placeholder="Yield for year 3">
+							</div>
+
+						</div>
+
+						<div class="row form-padding-custom"> <!-- Row-4 *********-->
+
+							<div class="col-sm-3 col-sm-offset-2">
+                <label for="y4" class="control-label">Yield 4:</label>
+                <input id="y4"  name="y4" type="text" class="form-control" placeholder="Yield for year 4">
+							</div>
+
+              <div class="col-sm-3 col-sm-offset-2">
+                <label for="r4" class="control-label">Returns 4:</label>
+                <input id="r4" name="r4" type="text" class="form-control" placeholder="Yield for year 4">
+							</div>
+
+						</div>
+
+						<div class="row form-padding-custom"> <!-- Row-5 *********-->
+
+							<div class="col-sm-3 col-sm-offset-2">
+                <label for="y5" class="control-label">Yield 5:</label>
+                <input id="y5"  name="y5" type="text" class="form-control" placeholder="Yield for year 5">
+							</div>
+
+              <div class="col-sm-3 col-sm-offset-2">
+                <label for="r5" class="control-label">Returns 5:</label>
+                <input id="r5" name="r5" type="text" class="form-control" placeholder="Yield for year 5">
+							</div>
+
+						</div>
+
+          </div>
+
+					<div class="row">
+						<div class="col-sm-2 col-sm-offset-5">
+								<button type="button" id="eval" name="eval" class="btn btn-primary">Evaluate</button>
+						</div>
+					</div>
+
+
+				</div><!-- ****************************Rabi Panel -->
+
+        <div class="panel panel-success">
+          <div class="panel-heading">Threshold Yield</div>
+          <div class="panel-body">
+						<div class="row form-padding-custom">
+							<div class="col-sm-4 col-sm-offset-4">
+                <label for="th" class="control-label">Threshold Yield:</label>
+                <input id="th" name="th" type="text" class="form-control" placeholder="" value="150">
+							</div>
+						</div>
+
+          </div>
+        </div>
+
+				<div class="panel panel-danger">
+          <div class="panel-heading">Indefinity Level</div>
+          <div class="panel-body">
+						<div class="row form-padding-custom">
+							<div class="col-sm-4 col-sm-offset-4">
+                <label for="dRisk" class="control-label">Demographic Risk:</label>
+                <input id="dRisk" name="dRisk" type="text" class="form-control" placeholder="">
+							</div>
+						</div>
+          </div>
+        </div>
+
+				<div class="row">
+					<div class="col-sm-2 col-sm-offset-5">
+						<input type="submit" class="form-control" value="Confirm" style="color: white; font-weight: bold; background-color:black;"/>
+					</div>
+				</div>
+
+			</div><!--closing container-->
+		</form>
+		<script>
+			$(document).ready(function(){
+
+
+				var cid=GetURLParameter('cid');
+				$('#ID').val(cid);
+
+
+				function GetURLParameter(sParam){
+					var sPageURL = window.location.search.substring(1);
+	    		var sURLVariables = sPageURL.split('&');
+	    		for (var i = 0; i < sURLVariables.length; i++)
+	    		{
+	        	var sParameterName = sURLVariables[i].split('=');
+	        	if (sParameterName[0] == sParam)
+	        	{
+	            return sParameterName[1];
+	        	}
+	    		}
+				}
+
+
+
+				$('#eval').click(function(){
+
+					var y1=$('#y1').val();
+					var y2=$('#y2').val();
+					var y3=$('#y3').val();
+					var y4=$('#y4').val();
+					var y5=$('#y5').val();
+
+					var r1=$('#r1').val();
+					var r2=$('#r2').val();
+					var r3=$('#r3').val();
+					var r4=$('#r4').val();
+					var r5=$('#r5').val();
+					$.ajax({
+						 type: 'POST',
+						 url: 'php/demographicRisk.php',
+						 data: {cid: cid,
+						 				yield1: y1,
+									 	yield2: y2,
+										yield3: y3,
+										yield4: y4,
+										yield5: y5,
+										ret1: r1,
+										ret2: r2,
+										ret3: r3,
+										ret4: r4,
+										ret5: r5},
+						 success: function( resJson ){
+								var json=JSON.parse(resJson);
+								console.log( resJson );
+								$('#dRisk').val(resJson);
+							}
+						});
+				});
+
+				});
+
+		</script>
+</body>
+</html>

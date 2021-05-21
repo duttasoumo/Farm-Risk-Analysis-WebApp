@@ -1,0 +1,305 @@
+<html>
+	<head>
+		<title>Crops</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<script src="javascript/jquery.min.js"></script>
+		<script src="javascript/bootstrap.min.js"></script>
+		<script src="javascript/jquery.min.js"></script>
+		<script>
+			$(document).ready(function(){
+			  $("#navigation").load("navigation.html");
+			});
+		</script>
+		<link rel="stylesheet" href="css/regpagestyle.css" />
+	</head>
+
+	<body>
+		<div id="navigation"></div>
+
+		<h1 align="center">Crop Details</h1>
+<form action="php/cropSubmit.php" method="post">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-6 col-sm-offset-3">
+					<label for="ID" class="control-label">CID:</label>
+					<input class="form-control" style="text-align: center; font-size: 25px;" type="text" id="ID" name="cid" />
+				</div>
+			</div>
+		</div>
+
+
+			<div class="container form-padding-custom">
+
+				<div class="panel panel-success"> <!--Rabi Panel ****************************-->
+					<div class="panel-heading">Rabi Season</div>
+					<div class="panel-body">
+						<div class="row form-padding-custom"> <!-- Row-1 *********-->
+
+							<div class="col-sm-4">
+								<div class="form-group">
+									<label for="rcrop1" class="control-label">Crop 1:</label>
+									<select id="rcrop1" name="rcrop1" class="form-control crop-selector">
+									</select>
+								</div>
+							</div>
+
+              <div class="col-sm-4">
+								<div class="form-group">
+									<label for="rcrop2" class="control-label">Crop 2:</label>
+									<select id="rcrop2" name="rcrop2" class="form-control crop-selector">
+									</select>
+								</div>
+							</div>
+
+              <div class="col-sm-4">
+								<div class="form-group">
+									<label for="rcrop3" class="control-label">Crop 3:</label>
+									<select id="rcrop3" name="rcrop3" class="form-control crop-selector">
+									</select>
+								</div>
+							</div>
+
+						</div>
+
+						<div class="row form-padding-custom"> <!-- Row-2 *********-->
+							<div class="col-sm-3 col-sm-offset-2">
+								<div class="form-group">
+									<label for="rsow" class="control-label">Sowing Month:</label>
+									<select id="rsow" name="rsow" class="form-control month-selector">
+									</select>
+								</div>
+							</div>
+
+              <div class="col-sm-3 col-sm-offset-2">
+                <div class="form-group">
+                  <label for="rhar" class="control-label">Harvesting Month:</label>
+                  <select id="rhar" name="rhar" class="form-control month-selector">
+                  </select>
+                </div>
+              </div>
+						</div>
+					</div>
+				</div><!-- ****************************Rabi Panel -->
+
+				<div class="panel panel-success"> <!--Summer Panel ****************************-->
+					<div class="panel-heading">Summer Season</div>
+					<div class="panel-body">
+						<div class="row form-padding-custom"> <!-- Row-1 *********-->
+
+							<div class="col-sm-4">
+								<div class="form-group">
+									<label for="scrop1" class="control-label">Crop 1:</label>
+									<select id="scrop1" name="scrop1" class="form-control crop-selector">
+									</select>
+								</div>
+							</div>
+
+              <div class="col-sm-4">
+								<div class="form-group">
+									<label for="scrop2" class="control-label">Crop 2:</label>
+									<select id="scrop2" name="scrop2" class="form-control crop-selector">
+									</select>
+								</div>
+							</div>
+
+              <div class="col-sm-4">
+								<div class="form-group">
+									<label for="scrop3" class="control-label">Crop 3:</label>
+									<select id="scrop3" name="scrop3" class="form-control crop-selector">
+									</select>
+								</div>
+							</div>
+
+						</div>
+
+						<div class="row form-padding-custom"> <!-- Row-2 *********-->
+							<div class="col-sm-3 col-sm-offset-2">
+								<div class="form-group">
+									<label for="ssow" class="control-label">Sowing Month:</label>
+									<select id="ssow" name="ssow" class="form-control month-selector">
+									</select>
+								</div>
+							</div>
+
+							<div class="col-sm-3 col-sm-offset-2">
+								<div class="form-group">
+									<label for="shar" class="control-label">Harvesting Month:</label>
+									<select id="shar" name="shar" class="form-control month-selector">
+									</select>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div><!-- ****************************Summer Panel -->
+
+				<div class="panel panel-success"> <!--Kharif Panel ****************************-->
+					<div class="panel-heading">Kharif Season</div>
+					<div class="panel-body">
+						<div class="row form-padding-custom"> <!-- Row-1 *********-->
+
+							<div class="col-sm-4">
+								<div class="form-group">
+									<label for="kcrop1" class="control-label">Crop 1:</label>
+									<select id="kcrop1" name="kcrop1" class="form-control crop-selector">
+									</select>
+								</div>
+							</div>
+
+              <div class="col-sm-4">
+								<div class="form-group">
+									<label for="kcrop2" class="control-label">Crop 2:</label>
+									<select id="kcrop2" name="kcrop2" class="form-control crop-selector">
+									</select>
+								</div>
+							</div>
+
+              <div class="col-sm-4">
+								<div class="form-group">
+									<label for="kcrop3" class="control-label">Crop 3:</label>
+									<select id="kcrop3" name="kcrop3" class="form-control crop-selector">
+									</select>
+								</div>
+							</div>
+
+						</div>
+
+						<div class="row form-padding-custom"> <!-- Row-2 *********-->
+							<div class="col-sm-3 col-sm-offset-2">
+								<div class="form-group">
+									<label for="ksow" class="control-label">Sowing Month:</label>
+									<select id="ksow" name="ksow" class="form-control month-selector">
+									</select>
+								</div>
+							</div>
+
+              <div class="col-sm-3 col-sm-offset-2">
+                <div class="form-group">
+                  <label for="khar" class="control-label">Harvesting Month:</label>
+									<select id="khar" name="khar" class="form-control month-selector">
+									</select>
+                </div>
+              </div>
+						</div>
+					</div>
+				</div><!-- ****************************Kharif Panel -->
+
+				<div class="row">
+					<div class="col-sm-2 col-sm-offset-5">
+						<input type="submit" class="form-control" value="Submit" style="color: white; font-weight: bold; background-color:black;"/>
+					</div>
+				</div>
+
+
+			</div><!--closing container-->
+		</form>
+
+		<script>
+			$(document).ready(function(){
+
+
+				var cid=GetURLParameter('cid');
+				$('#ID').val(cid);
+
+				function GetURLParameter(sParam){
+					var sPageURL = window.location.search.substring(1);
+	    		var sURLVariables = sPageURL.split('&');
+	    		for (var i = 0; i < sURLVariables.length; i++)
+	    		{
+	        	var sParameterName = sURLVariables[i].split('=');
+	        	if (sParameterName[0] == sParam)
+	        	{
+	            return sParameterName[1];
+	        	}
+	    		}
+				}
+
+				$.ajax({
+			     type: 'POST',
+			     url: 'php/crops.php',
+			     data: {cid: cid},
+			     success: function( resJson ){
+						 	var json=JSON.parse(resJson);
+							console.log( resJson );
+
+							//populate all crop selectors
+							$('.crop-selector option').remove();
+							for(var i=0; i<json['allCrops'].length; i++){
+								$('.crop-selector').append(new Option(json['allCrops'][i]['name'], json['allCrops'][i]['cropId']));
+							}
+
+							//var cropList=$('#dummy').html();
+							//$('.crop-selector').html(cropList);
+
+							//populate all month selectors
+							$('#rsow option').remove();
+							$('#rsow').append(new Option("Select Month","0"));
+							$('#rsow').append(new Option("January","01"));
+							$('#rsow').append(new Option("February","02"));
+							$('#rsow').append(new Option("March","03"));
+							$('#rsow').append(new Option("April","04"));
+							$('#rsow').append(new Option("May","05"));
+							$('#rsow').append(new Option("June","06"));
+							$('#rsow').append(new Option("July","07"));
+							$('#rsow').append(new Option("August","08"));
+							$('#rsow').append(new Option("September","09"));
+							$('#rsow').append(new Option("October","10"));
+							$('#rsow').append(new Option("November","11"));
+							$('#rsow').append(new Option("December","12"));
+
+							var monthList=$('#rsow').html();
+							$('.month-selector').html(monthList);
+
+							//setting default values for crops-selector ad month-selectors based on response
+
+
+//							console.log(json['cropsi']);
+							//Rabi
+							if(json.hasOwnProperty('cropsRabi'))
+							{
+								$('#rcrop1').val(json['cropsRabi']['crop1']);
+								$('#rcrop2').val(json['cropsRabi']['crop2']);
+								$('#rcrop3').val(json['cropsRabi']['crop3']);
+
+								var splitdate=json['cropsRabi']['sowing'].split('-');
+								$('#rsow').val(splitdate[1]);
+
+								splitdate=json['cropsRabi']['harvesting'].split('-');
+								$('#rhar').val(splitdate[1]);
+							}
+
+							//Summer
+							if(json.hasOwnProperty('cropsSummer'))
+							{
+								$('#scrop1').val(json['cropsSummer']['crop1']);
+								$('#scrop2').val(json['cropsSummer']['crop2']);
+								$('#scrop3').val(json['cropsSummer']['crop3']);
+
+								var splitdate=json['cropsSummer']['sowing'].split('-');
+								$('#ssow').val(splitdate[1]);
+
+								splitdate=json['cropsSummer']['harvesting'].split('-');
+								$('#shar').val(splitdate[1]);
+							}
+
+							//Kharif
+							if(json.hasOwnProperty('cropsKharif'))
+							{
+								$('#kcrop1').val(json['cropsKharif']['crop1']);
+								$('#kcrop2').val(json['cropsKharif']['crop2']);
+								$('#kcrop3').val(json['cropsKharif']['crop3']);
+
+								var splitdate=json['cropsKharif']['sowing'].split('-');
+								$('#ksow').val(splitdate[1]);
+
+								splitdate=json['cropsKharif']['harvesting'].split('-');
+								$('#khar').val(splitdate[1]);
+							}
+   	 				}
+				});
+
+			});//end of document ready
+		</script>
+</body>
+</html>

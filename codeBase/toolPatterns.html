@@ -1,0 +1,127 @@
+<html lang="en">
+<head>
+  <title>Tool Patterns</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <script src="javascript/jquery.min.js"></script>
+  <script src="javascript/bootstrap.min.js"></script>
+    <style>
+    th,td {
+        text-align: center;
+    }
+    </style>
+</head>
+<body>
+<div id="navigation"></div>
+<div class="container">
+    <form class="form-horizontal" action="#">
+    <div class="panel panel-default">
+  <div class="panel-heading">
+      <div class="form-group">
+          <label for="district" class="control-label col-sm-2">District :</label>
+          <div class="col-sm-4">
+      <select class="form-control" id="selectDistrict">
+    <option value="ALL">ALL</option>
+  </select>
+</div>
+        </div>
+        </div>
+  <div class="panel-body">
+      <ul class="nav nav-tabs" id="navbar">
+  <li class="active"><a href="#">January</a></li>
+          <li><a href="#">February</a></li>
+          <li><a href="#">March</a></li>
+          <li><a href="#">April</a></li>
+          <li><a href="#">May</a></li>
+          <li><a href="#">June</a></li>
+          <li><a href="#">July</a></li>
+          <li><a href="#">August</a></li>
+          <li><a href="#">September</a></li>
+          <li><a href="#">October</a></li>
+          <li><a href="#">November</a></li>
+          <li><a href="#">December</a></li>
+      </ul>
+         <div class="table-responsive ">          
+  <table class="table-bordered table-hover" id="harvestingTable" width="100%">
+    <thead>
+      <tr>
+        <th>FarmerID</th>
+        <th>Name</th>
+        <th>Phone</th>
+        <th>District</th>
+        <th>Tool</th>
+        <th>Hours</th>
+        <th>Rent</th>
+      </tr>
+    </thead>
+    <tbody>
+      </tbody>
+             </table>
+      </div>
+        </div>
+</div>
+        </form>
+    </div>
+    </body>
+ <script>
+                    $(document).ready(function() {
+                      // $("#header").load("test.html");
+                        $("#navigation").load("navigation.html?index=4");
+                        var month=1;
+                        var dist="ALL";
+                        populateDistrict();
+                        update(month,dist);
+                        $('#selectDistrict').change(function (){
+                            dist=$(this).val();
+                            update(month,dist);
+                            
+                        });
+                        $('#navbar > li > a').click(function() {
+                           
+                            if($(this).closest('li').attr('class')==="active")
+                                return;
+                            $('#navbar li').removeClass('active');
+                            $(this).closest("li").addClass('active');
+                            month=$('#navbar > li').index($(this).closest("li"))+1;
+                            update(month,dist);
+                        });
+                    });
+                    function populateDistrict(){
+                        $.ajax({
+								type : 'GET',
+								url : 'php/district.php',
+								data : {
+								},
+								success : function(responseText) {
+                                    var json = JSON.parse(responseText);
+									for(var i=0;i<json.length;i++){
+                                       $("#selectDistrict").append('<option value="'+json[i]['district']+'">'+json[i]['district']+"</option>");
+                                    }
+                                }
+                        });
+                    }
+                    function update(month,dist){
+                       // alert(dist+"\t"+month);
+                        $('#harvestingTable > tbody').empty();
+                        $.ajax({
+								type : 'POST',
+								url : 'php/toolList.php',
+								data : {
+									district : dist,
+                                    month : month
+								},
+								success : function(responseText) {
+									var json = JSON.parse(responseText);
+                                   // alert(responseText);
+									for(var i=0;i<json.length;i++){
+					                  var row="<tr> <td>"+json[i]['cid']+"</td><td>"+json[i]['name']+"</td><td>"+json[i]['phone']+"</td><td>"+json[i]['district']+"</td><td>"+json[i]['tool']+"</td><td>"+json[i]['hours']+"</td><td>"+json[i]['rent']+"</td></tr>";
+					                   $('#harvestingTable > tbody').append(row);
+                                       
+				                    }
+								}
+							});
+                        return;
+                    }
+    </script>
+</html>

@@ -1,0 +1,148 @@
+<html>
+	<head>
+		<title>Risks</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<script src="javascript/jquery.min.js"></script>
+		<script src="javascript/bootstrap.min.js"></script>
+		<script src="javascript/jquery.min.js"></script>
+		<script>
+			$(document).ready(function(){
+			  $("#navigation").load("navigation.html");
+			});
+		</script>
+		<link rel="stylesheet" href="css/regpagestyle.css" />
+	</head>
+
+	<body>
+		<div id="navigation"></div>
+
+		<h1 align="center">Risk Data</h1>
+    <div class="container">
+			<div class="row">
+				<div class="col-sm-6 col-sm-offset-3">
+					<label for="ID" class="control-label">CID:</label>
+					<input class="form-control" style="text-align: center; font-size: 25px;" type="text" id="ID" name="cid" />
+				</div>
+			</div>
+		</div>
+
+
+			<div class="container form-padding-custom">
+
+				<div class="panel panel-danger">
+          <div class="panel-heading">Product Risk</div>
+          <div class="panel-body">
+            <div class="row form-padding-custom">
+
+              <div class="col-sm-3 col-sm-offset-1">
+                <label for="pr" class="control-label">Product Risk:</label>
+                <input id="pr" name="pr" type="text" class="form-control" value="0" placeholder="in rupees">
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="panel panel-danger">
+          <div class="panel-heading">Resource Risk</div>
+          <div class="panel-body">
+            <div class="row form-padding-custom"> <!-- Row-4 *********-->
+
+              <div class="col-sm-3 col-sm-offset-1">
+                <label for="rr" class="control-label">Resource Risk:</label>
+                <input id="rr" name="rr" type="text" class="form-control" value="0" placeholder="in rupees">
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="panel panel-danger">
+          <div class="panel-heading">Demographic Risk</div>
+          <div class="panel-body">
+            <div class="row form-padding-custom"> <!-- Row-4 *********-->
+
+              <div class="col-sm-3 col-sm-offset-1">
+                <label for="dr" class="control-label">Demographic Risk:</label>
+                <input id="dr" name="dr" type="text" class="form-control" value="0" placeholder="in rupees">
+              </div>
+
+          </div>
+        </div>
+			</div>
+
+
+        <div class="panel panel-danger"> <!--Total Panel ****************************-->
+          <div class="panel-heading">Aggregate Risk Factor</div>
+          <div class="panel-body">
+            <div class="row form-padding-custom">
+
+              <div class="col-sm-4 col-sm-offset-4">
+                <label for="totalRisk" class="control-label">Risk Factor:</label>
+                <input id="totalRisk" name="totalRisk" type="text" class="form-control" value="0" placeholder="auto-generated value" />
+              </div>
+
+            </div>
+          </div>
+        </div> <!--End of Total Panel-->
+
+
+				<div class="row">
+					<div class="col-sm-2 col-sm-offset-5">
+						<input type="button" onclick="location.href='index.html'" class="form-control" value="Confirm" style="color: white; font-weight: bold; background-color:black;"/>
+					</div>
+				</div>
+
+			</div><!--closing container-->
+		<script>
+			$(document).ready(function(){
+
+
+				var cid=GetURLParameter('cid');
+				$('#ID').val(cid);
+
+
+				function GetURLParameter(sParam){
+					var sPageURL = window.location.search.substring(1);
+	    		var sURLVariables = sPageURL.split('&');
+	    		for (var i = 0; i < sURLVariables.length; i++)
+	    		{
+	        	var sParameterName = sURLVariables[i].split('=');
+	        	if (sParameterName[0] == sParam)
+	        	{
+	            return sParameterName[1];
+	        	}
+	    		}
+				}
+
+
+			$('#totalRisk').focus(function(){
+							var pr=parseFloat($('#pr').val());
+							var rr=parseFloat($('#rr').val());
+							var dr=parseFloat($('#dr').val());
+
+							var tr=(pr+rr+dr)/3;
+							$('#totalRisk').val(tr) ;
+						});
+
+			$.ajax({
+					type: 'POST',
+					url: 'php/allrisks.php',
+					data: { cid: cid },
+					success: function( resJson ){
+								 var json=JSON.parse(resJson);
+								 $('#pr').val(json['productRisk']);
+								 $('#rr').val(json['resourceRisk']);
+                 $('#dr').val(json['demographicRisk']);
+
+								 console.log('hi');
+					}
+				});
+
+		});
+
+			</script>
+</body>
+</html>

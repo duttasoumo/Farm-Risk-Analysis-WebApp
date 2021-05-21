@@ -1,0 +1,270 @@
+<html>
+	<head>
+		<title>Product Risks</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<script src="javascript/jquery.min.js"></script>
+		<script src="javascript/bootstrap.min.js"></script>
+		<script src="javascript/jquery.min.js"></script>
+		<script>
+			$(document).ready(function(){
+			  $("#navigation").load("navigation.html");
+			});
+		</script>
+		<link rel="stylesheet" href="css/regpagestyle.css" />
+	</head>
+
+	<body>
+		<div id="navigation"></div>
+
+		<h1 align="center">Product Risks</h1>
+<form action="php/productRiskSubmit.php" method="post">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-6 col-sm-offset-3">
+					<label for="ID" class="control-label">CID:</label>
+					<input class="form-control" style="text-align: center; font-size: 25px;" type="text" id="ID" name="cid" />
+				</div>
+			</div>
+		</div>
+
+
+			<div class="container form-padding-custom">
+
+				<div class="panel panel-success"> <!--Season Panel ****************************-->
+					<div class="panel-heading">Season</div>
+					<div class="panel-body">
+						<div class="row form-padding-custom">
+
+							<div class="col-sm-4 col-sm-offset-4">
+								<div class="form-group">
+									<label for="season" class="control-label">Select Current Season:</label>
+									<select id="season" name="season" class="form-control">
+                    <option value="Rabi">Rabi</option>
+                    <option value="Summer">Summer</option>
+                    <option value="Kharif">Kharif</option>
+									</select>
+								</div>
+							</div>
+
+            </div>
+          </div>
+        </div> <!--End of Season Panel-->
+
+
+				<div class="panel panel-success"> <!--Crops Panel ****************************-->
+					<div class="panel-heading">Crops for the Selected Season</div>
+					<div class="panel-body">
+						<div class="row form-padding-custom"> <!-- Row-1 *********-->
+
+							<div class="col-sm-3">
+								<label for="c1" class="control-label">Crop 1:</label>
+								<input id="c1" name="c1" type="text" value="0" class="form-control" placeholder="auto-generated value" />
+							</div>
+
+              <div class="col-sm-3">
+								<label for="c1SP" class="control-label">Selling Price:</label>
+								<input id="c1SP" name="c1SP" type="text" class="form-control" placeholder="in Rupees" />
+							</div>
+
+              <div class="col-sm-3">
+								<label for="c1Area" class="control-label">Part of Land Used:</label>
+								<input id="c1Area" name="c1Area" type="text" value="0" class="form-control" placeholder="in %" />
+							</div>
+
+              <div class="col-sm-3">
+								<label for="c1Risk" class="control-label">Product Risk:</label>
+								<input id="c1Risk" name="c1Risk" type="text" value="0" class="form-control" placeholder="auto-generated value" />
+							</div>
+
+						</div><!--end row 1-->
+
+            <div class="row form-padding-custom"> <!-- Row-2 *********-->
+
+              <div class="col-sm-3">
+								<label for="c2" class="control-label">Crop 2:</label>
+								<input id="c2" name="c2" type="text" class="form-control" placeholder="auto-generated value" />
+              </div>
+
+              <div class="col-sm-3">
+                <label for="c2SP" class="control-label">Selling Price:</label>
+                <input id="c2SP" name="c2SP" type="text" class="form-control" placeholder="in Rupees" />
+              </div>
+
+              <div class="col-sm-3">
+                <label for="c2Area" class="control-label">Part of Land Used:</label>
+                <input id="c2Area" name="c2Area" type="text" value="0" class="form-control" placeholder="in %" />
+              </div>
+
+              <div class="col-sm-3">
+                <label for="c2Risk" class="control-label">Product Risk:</label>
+                <input id="c2Risk" name="c2Risk" type="text" value="0" class="form-control" placeholder="auto-generated value" />
+              </div>
+
+            </div><!--end row 2-->
+
+            <div class="row form-padding-custom"> <!-- Row-3 *********-->
+
+              <div class="col-sm-3">
+								<label for="c3" class="control-label">Crop 3:</label>
+								<input id="c3" name="c3" type="text" class="form-control" placeholder="auto-generated value" />
+              </div>
+
+              <div class="col-sm-3">
+                <label for="c3SP" class="control-label">Selling Price:</label>
+                <input id="c3SP" name="c3SP" type="text" class="form-control" placeholder="in Rupees" />
+              </div>
+
+              <div class="col-sm-3">
+                <label for="c3Area" class="control-label">Part of Land Used:</label>
+                <input id="c3Area" name="c3Area" type="text" value="0" class="form-control" placeholder="in %" />
+              </div>
+
+              <div class="col-sm-3">
+                <label for="c3Risk" class="control-label">Product Risk:</label>
+                <input id="c3Risk" name="c3Risk" type="text" value="0" class="form-control" placeholder="auto-generated value" />
+              </div>
+            </div><!--end row 3-->
+
+            <div class="row form-padding-custom"> <!-- Row-4 *********-->
+							<div class="col-sm-3 col-sm-offset-3">
+								<div class="form-group">
+									<label for="sow" class="control-label">Sowing Month:</label>
+									<input id="sow" name="sow" type="text" class="form-control" placeholder="auto-generated value" />
+								</div>
+							</div>
+
+              <div class="col-sm-3">
+                <div class="form-group">
+                  <label for="har" class="control-label">Harvesting Month:</label>
+                  <input id="har" name="har" type="text" class="form-control" placeholder="auto-generated value" />
+                </div>
+              </div>
+						</div><!--end row 4-->
+
+          </div>
+				</div><!-- ****************************Crops Panel -->
+
+
+        <div class="panel panel-danger"> <!--Total Panel ****************************-->
+          <div class="panel-heading">Aggregate Risk Factor</div>
+          <div class="panel-body">
+            <div class="row form-padding-custom">
+
+              <div class="col-sm-4 col-sm-offset-4">
+                <label for="totalRisk" class="control-label">Total Product Risk:</label>
+                <input id="totalRisk" name="totalRisk" type="text" class="form-control" placeholder="auto-generated value" />
+              </div>
+
+            </div>
+          </div>
+        </div> <!--End of Total Panel-->
+
+				<div class="row">
+					<div class="col-sm-2 col-sm-offset-5">
+						<input type="submit" class="form-control" value="Submit" style="color: white; font-weight: bold; background-color:black;"/>
+					</div>
+				</div>
+
+      </div><!--closing container-->
+		</form>
+
+    <script>
+			$(document).ready(function(){
+
+				var cid=GetURLParameter('cid');
+				$('#ID').val(cid);
+				console.log($('#cid').html());
+
+
+				function GetURLParameter(sParam){
+					var sPageURL = window.location.search.substring(1);
+	    		var sURLVariables = sPageURL.split('&');
+	    		for (var i = 0; i < sURLVariables.length; i++)
+	    		{
+	        	var sParameterName = sURLVariables[i].split('=');
+	        	if (sParameterName[0] == sParam)
+	        	{
+	            return sParameterName[1];
+	        	}
+	    		}
+				}
+
+
+				populateCrops();
+				$('#season').change(function(){
+					populateCrops();
+				});
+
+				$('#c1SP').blur(function(){
+					var risk=sellingPrice($(this).val(),1,$('#c1Risk'));
+				});
+
+				$('#c2SP').blur(function(){
+					var risk=sellingPrice($(this).val(),2,$('#c2Risk'));
+					$('#c2Risk').val(risk);
+				});
+
+				$('#c3SP').blur(function(){
+					var risk=sellingPrice($(this).val(),3,$('#c3Risk'));
+					$('#c3Risk').val(risk);
+				});
+
+
+				$('#totalRisk').focus(function(){
+					
+					 var r1=parseFloat($('#c1Risk').val())*parseFloat($('#c1Area').val());
+					 var r2=parseFloat($('#c2Risk').val())*parseFloat($('#c2Area').val());
+					 var r3=parseFloat($('#c3Risk').val())*parseFloat($('#c3Area').val());
+					 var c=3;
+					 if($('#c2').val()==="-") c--;
+					 if($('#c3').val()==="-") c--;
+					 var tr=(r1+r2+r3)/(c*100);
+					$('#totalRisk').val(tr) ;
+				});
+				function sellingPrice(sp ,cropIndex,e)
+				{
+					$.ajax({
+						type: 'POST',
+						url: 'php/productRisk.php',
+						data: { sellingPrice: sp, crop: json[0]['crop'+cropIndex], cid:cid },
+						success: function( resJson ){
+							     var json=JSON.parse(resJson);
+							     $(e).val(json['risk']);
+						}
+					});
+				}
+                var json;
+				function populateCrops()
+				{
+					var ssn=$('#season').val();
+					console.log(cid);
+					console.log(ssn);
+					$.ajax({
+				     type: 'POST',
+				     url: 'php/seasonalCrop.php',
+						 data: { cid: cid, season: ssn },
+				     success: function( resJson ){
+							 	console.log( resJson );
+								json=JSON.parse(resJson);
+								$('#c1').val(json[0]['crop1']);
+								$('#c2').val(json[0]['crop2']);
+								$('#c3').val(json[0]['crop3']);
+								$('#sow').val(json[0]['sowing']);
+								$('#har').val(json[0]['harvesting']);
+
+								/*console.log( json );
+								console.log(json['crop1']);
+								console.log(json['crop2']);
+								console.log(json['crop3']);
+								console.log(json['sowing']);
+								console.log(json['harvesting']);*/
+							}
+						});
+				}
+
+      });
+    </script>
+  </body>
+</html>

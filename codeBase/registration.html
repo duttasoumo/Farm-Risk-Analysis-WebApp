@@ -1,0 +1,199 @@
+<html>
+	<head>
+		<title>New Registration</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<script src="javascript/jquery.min.js"></script>
+		<script src="javascript/bootstrap.min.js"></script>
+		<script>
+			$(document).ready(function(){
+			  $("#navigation").load("navigation.html");
+			});
+		</script>
+		<link rel="stylesheet" href="css/regpagestyle.css" />
+	</head>
+
+	<body>
+		<div id="navigation"></div>
+
+		<h1 align="center">Registration Form</h1>
+		<form action="php/personalReg.php" method="POST">
+			<div class="container form-padding-custom">
+
+				<div class="panel panel-success"> <!--Personal Details Panel ****************************-->
+					<div class="panel-heading">Personal Details</div>
+					<div class="panel-body">
+
+						<div class="row form-padding-custom"> <!-- Row-1 *********-->
+
+							<div class="col-sm-8">
+								<div>
+									<label for="fName" class="control-label">Name:</label>
+									<input id="fName" name="fName" type="text" class="form-control" placeholder="Farmer's Name">
+								</div>
+							</div>
+
+							<div class="col-sm-4">
+								<div>
+									<label for="fPhone" class="control-label">Phone:</label>
+									<input id="fPhone" name="fPhone" type="text" class="form-control" placeholder="Phone Number">
+								</div>
+							</div>
+
+						</div>
+
+						<div class="row form-padding-custom"> <!-- Row-2 *********-->
+
+							<div class="col-sm-8">
+								<div>
+									<label for="fAadhar" class="control-label">Aadhar Number:</label>
+									<input id="fAadhar" name="fAadhar" type="text" class="form-control" placeholder="Aadhar Number">
+								</div>
+							</div>
+
+							<div class="col-sm-4">
+								<div class="form-group">
+									<label for="fSex" class="control-label">Sex:</label>
+									<select id="fSex" name="fSex" class="form-control">
+										<option value="male">Male</option>
+										<option value="female">Female</option>
+										<option value="other">Other</option>
+									</select>
+								</div>
+							</div>
+
+						</div>
+
+					</div>
+				</div><!-- ****************************Personal Details Panel -->
+
+				<div class="panel panel-success"> <!--Address Info ****************************-->
+					<div class="panel-heading">Address Details</div>
+					<div class="panel-body">
+
+						<div class="row form-padding-custom"> <!-- Row-1 *********-->
+							<div class="col-sm-6">
+								<div class="form-group">
+									<label for="fState" class="control-label">State:</label>
+									<select id="fState" name="fState" class="form-control">
+									</select>
+								</div>
+							</div>
+
+							<div class="col-sm-6">
+								<div class="form-group">
+									<label for="fDistrict" class="control-label">District:</label>
+									<select id="fDistrict" name="fDistrict" class="form-control">
+									</select>
+								</div>
+							</div>
+						</div>
+
+						<div class="row form-padding-custom"> <!-- Row-2 *********-->
+							<div class="col-sm-6">
+								<div class="form-group">
+									<label for="fBlock" class="control-label">Block:</label>
+									<input id="fBlock" name="fBlock" type="text" class="form-control" placeholder="Block">
+								</div>
+							</div>
+
+							<div class="col-sm-6">
+								<div>
+									<label for="fVillage" class="control-label">Village:</label>
+									<input id="fVillage" name="fVillage" type="text" class="form-control" placeholder="Name of Village">
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div><!-- ****************************Address Info Panel -->
+
+				<div class="panel panel-success"> <!--Land Details ****************************-->
+					<div class="panel-heading">Land Details</div>
+					<div class="panel-body">
+
+						<div class="row form-padding-custom"> <!-- Row-1 *********-->
+							<div class="col-sm-6">
+								<div class="form-group">
+									<label for="fLand" class="control-label">Land Size:</label>
+									<select id="fLand" name="fLand"class="form-control">
+										<option value="0.1">less than 0.1</option>
+										<option value="0.2">0.1-0.2</option>
+										<option value="0.3" selected>0.2-0.4</option>
+										<option value="0.5">0.4-0.6</option>
+										<option value="0.7">0.6-0.8</option>
+										<option value="0.9">0.8-1.0</option>
+										<option value="1.3">1.0-1.5</option>
+										<option value="1.7">1.5-2.0</option>
+										<option value="2.2">2.0-2.5</option>
+										<option value="3">more than 2.5</option>
+									</select>
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div><!-- ***************************Land Details -->
+
+				<div class="row">
+					<div class="col-sm-2 col-sm-offset-5">
+						<button id="btnSubmit" class="form-control" style="color: white; font-weight: bold; background-color:black;">Submit and Next</button>
+					</div>
+				</div>
+
+			</div><!--closing container-->
+		</form>
+
+		<script>
+			$(document).ready(function(){
+				var jstring='[{"name":"Andaman and Nicobar","dist":["South Andaman","North and Middle Andaman","Nicobar"]},{"name":"Andhra Pradesh","dist":["East Godavari","Guntur","Krishna","Visakhapatnam","Chittoor","Anantapur","Kurnool","West Godavari","Prakasam","Sri Potti Sriramulu Nellore","Kadapa","Srikakulam","Vizianagaram"]},{"name":"Arunachal Pradesh","dist":["Papum Pare","Changlang","Lohit","West Siang","Tirap","East Siang","Kurung Kumey","West Kameng","Upper Subansiri","Lower Subansiri","East Kameng","Lower Dibang Valley","Tawang","Upper Siang","Anjaw","Dibang Valley","Longding"]},{"name":"Assam","dist":["Nagaon","Dhubri","Sonitpur","Cachar","Barpeta","Kamrup","Dibrugarh","Tinsukia","Kamrup Metropolitan","Karimganj","Sivasagar","Jorhat","Golaghat","Lakhimpur","Goalpara","Karbi Anglong","Morigaon","Baksa","Darrang","Kokrajhar","Udalguri","Nalbari","Bongaigaon","Dhemaji","Hailakandi","Chirang","Dima Hasao"]},{"name":"Bihar","dist":["Patna","East Champaran","Muzaffarpur","Madhubani","Gaya","Samastipur","Saran","West Champaran","Darbhanga","Vaishali","Sitamarhi","Siwan","Purnia","Katihar","Bhagalpur","Rohtas","Begusarai","Nalanda","Araria","Bhojpur","Gopalganj","Aurangabad","Supaul","Nawada","Banka","Madhepura","Saharsa","Jamui","Buxar","Kishanganj","Khagaria","Kaimur","Munger","Jehanabad","Lakhisarai","Arwal","Sheohar","Sheikhpura"]},{"name":"Chandigarh","dist":["Chandigarh"]},{"name":"Chhattisgarh","dist":["Raipur","Durg","Bilaspur","Janjgir-Champa","Rajnandgaon","Raigarh","Bastar","Korba","Mahasamund","Jashpur","Dhamtari","Kanker","Surajpur","Koriya","Kabirdham (formerly Kawardha)","Dantewada","Surguja","Bijapur","Sukma","Narayanpur","Balrampur","Bemetara","Balod","Baloda Bazar","Gariaband","Kondagaon","Mungeli"]},{"name":"Dadra and Nagar Haveli","dist":["Dadra and Nagar Haveli"]},{"name":"Daman and Diu","dist":["Daman","Diu"]},{"name":"Delhi","dist":["North West Delhi","South Delhi","West Delhi","South West Delhi","North East Delhi","East Delhi","North Delhi","Central Delhi","New Delhi","Shahdara","South East Delhi"]},{"name":"Goa","dist":["North Goa","South Goa"]},{"name":"Gujarat","dist":["Ahmedabad","Surat","Vadodara","Rajkot","Banaskantha","Bhavnagar","Junagadh","Sabarkantha","Panchmahal","Kheda","Jamnagar","Dahod","Kutch","Anand","Mehsana","Surendranagar","Valsad","Bharuch","Amreli district","Gandhinagar","Patan","Navsari","Gir Somnath","Chhota Udaipur","Aravalli","Mahisagar","Morbi","Tapi","Devbhoomi Dwarka","Botad","Narmada","Porbandar","Dang"]},{"name":"Haryana","dist":["Faridabad","Hissar","Bhiwani","Gurgaon","Karnal","Sonipat","Jind","Sirsa","Yamuna Nagar","Panipat","Ambala","Mewat","Kaithal","Rohtak","Palwal","Kurukshetra","Jhajjar","Fatehabad","Mahendragarh","Rewari","Panchkula"]},{"name":"Himachal Pradesh","dist":["Kangra","Mandi","Shimla","Solan","Sirmaur","Una","Chamba","Hamirpur","Kullu","Bilaspur","Kinnaur","Lahaul and Spiti"]},{"name":"Jammu and Kashmir","dist":["Jammu","Srinagar","Anantnag","Baramulla","Kupwara","Badgam","Rajouri","Kathua","Pulwama","Udhampur","Poonch","Kulgam","Doda","Bandipora","Samba","Reasi","Ganderbal","Ramban","Shopian","Kishtwar","Leh","Kargil"]},{"name":"Jharkhand","dist":["Ranchi","Dhanbad","Giridih","East Singhbhum","Bokaro","Palamu","Hazaribag","West Singhbhum","Deoghar","Garhwa","Dumka","Godda","Sahibganj","Seraikela Kharsawan","Chatra","Gumla","Ramgarh","Pakur","Jamtara","Latehar","Koderma","Simdega","Khunti","Lohardaga"]},{"name":"Karnataka","dist":["Bangalore Urban","Belgaum","Mysore","Tumkur","Gulbarga","Bellary","Vijayapura","Dakshina Kannada","Davanagere","Raichur","Bagalkot","Dharwad","Mandya","Hassan","Shimoga","Bidar","Chitradurga","Haveri district","Kolar","Koppal","Uttara Kannada","Chikkaballapur","Udupi","Yadgir","Chikkamagaluru","Ramanagara","Gadag","Chamarajnagar","Bangalore Rural","Kodagu"]},{"name":"Kerala","dist":["Malappuram","Thiruvananthapuram","Ernakulam","Thrissur","Kozhikode","Palakkad","Kollam","Kannur","Alappuzha","Kottayam","Kasaragod","Pathanamthitta","Idukki","Wayanad"]},{"name":"Lakshadweep","dist":["Lakshadweep"]},{"name":"Madhya Pradesh","dist":["Indore","Jabalpur","Sagar","Bhopal","Rewa","Satna","Dhar","Chhindwara","Gwalior","Ujjain","Morena","Khargone (West Nimar)","Chhatarpur","Shivpuri","Bhind","Balaghat","Betul","Dewas","Rajgarh","Shajapur","Vidisha","Ratlam","Tikamgarh","Barwani","Seoni","Mandsaur","Raisen","Sehore","Khandwa (East Nimar)","Katni","Damoh","Hoshangabad","Guna","Singrauli","Sidhi","Narsinghpur","Shahdol","Mandla","Jhabua","Panna","Ashok Nagar","Neemuch","Datia","Burhanpur","Anuppur","Alirajpur","Dindori","Sheopur","Umaria","Harda","Agar"]},{"name":"Maharashtra","dist":["Thane","Pune","Mumbai suburban","Nashik","Nagpur","Ahmednagar","Solapur","Jalgaon","Kolhapur","Aurangabad","Nanded","Mumbai City","Satara","Amravati","Sangli","Yavatmal","Raigad","Buldhana","Beed","Latur","Chandrapur","Dhule","Jalna","Parbhani","Akola","Osmanabad","Nandurbar","Ratnagiri","Gondia","Wardha","Bhandara","Washim","Hingoli","Gadchiroli","Sindhudurg","Palghar"]},{"name":"Manipur","dist":["Imphal West","Imphal East","Thoubal","Senapati","Churachandpur","Bishnupur","Ukhrul","Chandel","Tamenglong"]},{"name":"Meghalaya","dist":["East Khasi Hills","West Garo Hills","West Khasi Hills","East Garo Hills","West Jaintia Hills","Ri Bhoi","South Garo Hills","East Jaintia Hills","North Garo Hills","South West Khasi Hills","South West Garo Hills"]},{"name":"Mizoram","dist":["Tuensang","Aizawl","Dimapur","Kohima","Mon","Mokokchung","Wokha","Peren","Phek","Lunglei","Zunheboto","Champhai","Lawngtlai","Mamit","Kolasib","Kiphire","Serchhip","Saiha","Longleng"]},{"name":"Odisha","dist":["Ganjam","Cuttack","Mayurbhanj","Balasore","Khordha","Sundargarh","Jajpur","Kendujhar (Keonjhar)","Puri","Balangir","Kalahandi","Bhadrak","Bargarh (Baragarh)","Kendrapara","Koraput","Angul","Nabarangpur","Dhenkanal","Jagatsinghpur","Sambalpur","Nayagarh","Rayagada","Kandhamal","Subarnapur (Sonepur)","Malkangiri","Nuapada","Jharsuguda","Gajapati","Boudh (Bauda)","Debagarh (Deogarh)"]},{"name":"Puducherry","dist":["Pondicherry","Karaikal","Yanam","Mahe"]},{"name":"Punjab","dist":["Ludhiana","Patiala","Amritsar","Gurdaspur","Jalandhar","Firozpur","Pathankot","Sangrur","Hoshiarpur","Bathinda","Tarn Taran","Moga","Sahibzada Ajit Singh Nagar","Sri Muktsar Sahib","Kapurthala","Mansa","Rupnagar","Faridkot","Shahid Bhagat Singh Nagar","Fatehgarh Sahib","Barnala","Fazilka"]},{"name":"Rajasthan","dist":["Jaipur","Jodhpur","Alwar","Nagaur","Udaipur","Sikar","Barmer","Ajmer","Bharatpur","Bhilwara","Bikaner","Jhunjhunu","Churu","Pali","Ganganagar","Kota","Jalore","Banswara","Hanumangarh","Dausa","Chittorgarh","Karauli","Tonk","Jhalawar","Dungapur","Sawai Madhopur","Baran","Dholpur","Rajsamand","Bundi","Sirohi","Pratapgarh","Jaisalmer"]},{"name":"Sikkim","dist":["East Sikkim","South Sikkim","West Sikkim","North Sikkim"]},{"name":"Tamil Nadu","dist":["Chennai","Madurai","Kanchipuram","Vellore","Tiruvallur","Salem","Coimbatore","Viluppuram","Tirunelveli","Kanyakumari","Tiruchirappalli","Cuddalore","Tirupur","Tiruvannamalai","Thanjavur","Erode","Dindigul","Virudhunagar","Pudukkottai","Krishnagiri","Thoothukudi","Namakkal","Nagapattinam","Dharmapuri","Sivaganga","Ramanathapuram","Tiruvarur","Theni","Karur","Ariyalur","Nilgiris","Perambalur"]},{"name":"Telangana","dist":["Ranga Reddy","Mahbubnagar","Hyderabad","Karimnagar","Warangal","Nalgonda","Medak","Khammam","Adilabad","Nizamabad"]},{"name":"Tripura","dist":["West Tripura","Sepahijala","Gomati","South Tripura","North Tripura","Dhalai","Khowai","Unokoti"]},{"name":"Uttar Pradesh","dist":["Allahabad","Moradabad","Ghaziabad","Azamgarh","Lucknow","Kanpur Nagar","Jaunpur district","Sitapur","Bareilly","Gorakhpur","Agra","Muzaffarnagar","Hardoi","Lakhimpur Kheri","Sultanpur","Budaun","Bijnor","Varanasi","Aligarh","Ghazipur","Kushinagar","Bulandshahr","Saharanpur","Meerut","Gonda","Raebareli","Barabanki","Ballia","Pratapgarh","Unnao","Deoria","Shahjahanpur","Maharajganj","Fatehpur","Siddharthnagar","Mathura","Firozabad","Mirzapur","Faizabad","Basti","Ambedkar Nagar","Bahraich","Rampur","Sambhal(Bheem Nagar)","Mau","Balrampur","Pilibhit","Jhansi","Chandauli","Farrukhabad","Sonbhadra","Mainpuri","Jyotiba Phule Nagar","Banda","Kanpur Dehat (Ramabai Nagar)","Etah","Sant Kabir Nagar","Gautam Buddh Nagar","Jalaun","Kannauj","Kaushambi","Etawah","Hathras (Mahamaya Nagar)","Sant Ravidas Nagar","Hapur (Panchsheel Nagar)","Kanshi Ram Nagar","Auraiya","Bagpat","Lalitpur","Shravasti","Hamirpur","Chitrakoot","Mahoba","Shamli","Amethi (Chhatrapati Shahuji Maharaj Nagar)"]},{"name":"Uttarakhand","dist":["Haridwar","Dehradun","Udham Singh Nagar","Nainital","Pauri Garhwal","Almora","Tehri Garhwal","Pithoragarh","Chamoli","Uttarkashi","Bageshwar","Champawat","Rudraprayag"]},{"name":"West Bengal","dist":["North 24 Parganas","South 24 Parganas","Bardhaman","Murshidabad","Hooghly","Nadia","Paschim Medinipur","Howrah","Kolkata","Purba Medinipur","Maldah","Jalpaiguri","Bankura","Birbhum","Uttar Dinajpur","Purulia","Cooch Behar","Darjeeling","Alipurduar","Dakshin Dinajpur"]}]';
+				var json=JSON.parse(jstring);
+				for(var i=0; i<json.length; i++){
+					$('#fState').append(new Option(json[i]['name'], i));
+				}
+
+				populateDistrict();
+				$('#fState').change(function(){
+					populateDistrict();
+				});
+
+				$('#fPhone').blur(function(){
+						 var x=Number($("#fPhone").val());
+						 if(x!=0)
+							 if(!(x>6000000000 && x<9999999999)){
+								 $("#fPhone").val("");
+								 $("fPhone").focus();
+								 alert(x+" is INVALID Phone Number");
+							 }
+					 });
+
+			 $('#fAadhar').blur(function(){
+						 var x=Number($("#fAadhar").val());
+						 if(x!=0)
+							 if(!(x>100000000000 && x<999999999999)){
+								 $("#fAadhar").val("");
+								 $("#fAadhar").focus();
+								 alert(x+" is INVALID Aadhar ID");
+							 }
+					 });
+
+			$('#btnSubmit').click(function(){
+				var s=$('#fState option:selected').text();
+				$('#fState option:selected').val(s);
+				$('form').submit();
+			});
+
+			function populateDistrict(){
+				$('#fDistrict option').remove();
+				var sel=$('#fState').val();
+				for(var i=0;i<json[sel]['dist'].length; i++){
+					$('#fDistrict').append(new Option(json[sel]['dist'][i], json[sel]['dist'][i]));
+				}
+			}
+
+		});
+
+		</script>
+</body>
+</html>
